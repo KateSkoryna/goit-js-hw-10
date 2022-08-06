@@ -5,8 +5,9 @@ export default function fetchCountries(name) {
   const url = `https://restcountries.com/v3.1/name/${name}?fields=${filters}`;
   return fetch(url).then(response => {
     if (!response.ok) {
-      Notiflix.Notify.failure('Oops, there is no country with that name');
-      return;
+      return Notiflix.Notify.failure(
+        'Oops, there is no country with that name'
+      );
     }
     return response.json();
   });

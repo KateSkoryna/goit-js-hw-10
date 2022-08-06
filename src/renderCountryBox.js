@@ -1,9 +1,15 @@
 export default function renderCountryBox(list, box) {
   const markup = list
     .map(
-      ({ name, capital, population, flags: { svg }, languages }) =>
+      ({
+        name: { official },
+        capital,
+        population,
+        flags: { svg },
+        languages,
+      }) =>
         `<div class="country-info__box"><img src="${svg}" alt="flag" width="30">
-    <h1 class="country-info__main-title">${name.official}</h1></div>
+    <h1 class="country-info__main-title">${official}</h1></div>
     <ul class="country-info__list">
     <li class="country-info__item">
      <h2 class="country-info___title">Capital:</h2>
